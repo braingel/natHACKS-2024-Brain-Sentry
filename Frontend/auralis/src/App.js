@@ -1,23 +1,32 @@
+// src/App.js
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth, db } from "./firebase";
+import { doc, getDoc } from "firebase/firestore";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 
 function App() {
-  const [userEmailPrefix, setUserEmailPrefix] = useState(null);
+  const [userName, setUserName] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user && user.email) {
-        const emailPrefix = user.email.split("@")[0];
-        setUserEmailPrefix(emailPrefix);
+    // Listen for authentication state changes
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Fetch user's name from Firestore
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          setUserName(userDoc.data().name);
+        } else {
+          setUserName(null);
+        }
       } else {
-        setUserEmailPrefix(null);
+        setUserName(null); // No user is logged in
       }
     });
 
+    // Cleanup subscription on unmount
     return () => unsubscribe();
   }, []);
 
@@ -25,7 +34,7 @@ function App() {
     try {
       await signOut(auth);
       alert("Signed out successfully");
-      setUserEmailPrefix(null); 
+      setUserName(null); // Reset user name after sign out
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -34,9 +43,9 @@ function App() {
   return (
     <Router>
       <div>
-        {userEmailPrefix && (
+        {userName && (
           <div style={{ display: "flex", alignItems: "center" }}>
-            <h2>Welcome, {userEmailPrefix}</h2>
+            <h2>Welcome, {userName}</h2>
             <button onClick={handleSignOut} style={{ marginLeft: "10px" }}>
               Sign Out
             </button>
