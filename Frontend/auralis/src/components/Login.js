@@ -1,4 +1,4 @@
-// src/components/Login.js
+  // src/components/Login.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -16,11 +16,14 @@ const Login = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Redirect to homepage after successful login
-      navigate("/homepage");
+      navigate("/homepage"); // Redirect to homepage after successful login
     } catch (err) {
       setError("Invalid email or password. Please try again.");
     }
+  };
+
+  const goToSignup = () => {
+    navigate("/signup"); // Navigate to the signup page
   };
 
   return (
@@ -44,6 +47,12 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
+      <p>
+        Don't have an account?{" "}
+        <button onClick={goToSignup} style={{ border: "none", background: "none", color: "blue", cursor: "pointer" }}>
+          Sign Up
+        </button>
+      </p>
     </div>
   );
 };
