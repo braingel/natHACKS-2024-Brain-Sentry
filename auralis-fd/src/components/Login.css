@@ -1,0 +1,79 @@
+.login-container {
+    display: block;
+    margin: 0 auto;
+}
+
+.login-container :is(h2, h3, p), .field, .submit-bttn {
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+    font-size: var(--regularsize);
+}
+
+.login-link {
+    color: var(--lightpink);
+    font-weight: 400;
+}
+   
+.login-container>h1 {
+    color: var(--white);
+    font-family: "Exo", serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: clamp(1.5rem, 1.1795rem + 1.0256vw, 2rem);
+}
+
+.login-container>h2 {
+    color: var(--lightpink);
+    text-align: center;
+
+    margin-top: 0.25em;
+}
+
+.login-container>h3 {
+    color: #9496D1;
+    text-align: left;
+
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+}
+
+.login-container>p {
+    color: var(--lightpink);
+    text-align: center;
+
+    margin-top: 1.25em;
+}
+
+.login-container>form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.field {
+    width: 100%;
+    height: 3.625em;
+    background: rgba(15, 4, 73, 0.5);
+    border: 1px solid #75AFF0;
+    border-radius: 5px;
+    color: var(--lightpink);
+    padding-left: 0.75em;
+}
+
+.field::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 0.55;
+}
+
+.submit-bttn {
+    width: 100%;
+    height: 3.625em;
+
+    background: #75AFF0;
+    color: #053061;
+    border-radius: 5px;
+}
+
+.error {
+    color: #9496D1;
+}

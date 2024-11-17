@@ -1,0 +1,41 @@
+.main-popup {
+    position: absolute; 
+
+    width: 78%;
+    min-width: 400px;
+    height: auto;
+
+    background: rgba(77, 77, 77, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    border: 3px solid #3F5CAE;
+    border-radius: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 13.3% 86.7%;
+    grid-template-rows: auto auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+/* .nav { 
+    grid-area: 1 / 1 / 2 / 1;
+}
+.header { 
+    grid-area: 1 / 2 / 2 / 1;
+}
+.content { 
+    grid-area: 2 / 2 / 2 / 2;
+} */
+
+/* .nav { 
+    grid-area: 1 / 1 / 6 / 2; 
+}
+.header { 
+    grid-area: 1 / 2 / 2 / 6; 
+}
+.content { 
+    grid-area: 2 / 2 / 6 / 6; 
+} */

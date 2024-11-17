@@ -1,0 +1,76 @@
+/* Chrome, Safari, Edge, Opera */
+/* TODO: the like background is white when you scroll so change that with that thing  */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+:root {
+  --white: #F0F0FF;
+  --lightpink: #CCCEFF;
+
+  --regularsize: clamp(1rem, 0.9199rem + 0.2564vw, 1.125rem);
+  --small: clamp(0.75rem, 0.5897rem + 0.5128vw, 1rem);
+
+  --bodyweight: 200;
+
+  width: 100%;
+  height: 100%;
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  
+  width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(180deg, #1D0C73 0%, #1B0B68 50%, #180A5C 75%, #160953 100%);
+}
+
+button {
+  box-shadow: none; /* Remove any box-shadow */
+  transition: none; /* Remove any transition animations */
+}
+
+button:active,
+button:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: none; /* Ensure no shadow effect when clicked */
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}

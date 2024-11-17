@@ -1,0 +1,6 @@
+flask
+transformers
+torch
+soundfile
+flask-cors
+gunicorn

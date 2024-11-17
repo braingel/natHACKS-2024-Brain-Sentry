@@ -1,0 +1,21 @@
+.not-found-header {
+    margin-top: 1em;
+    color: var(--white);
+    font-family: "Exo", serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: clamp(1.5rem, 1.1795rem + 1.0256vw, 2rem);
+} 
+
+.not-found-p {
+    margin-top: 2em;
+    color: var(--white);
+    text-align: center;
+    font-family: "Roboto Flex", serif;
+    font-size: var(--regularsize);
+}
+
+a {
+    color: white;
+    color: var(--lightpink);
+}

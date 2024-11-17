@@ -1,0 +1,67 @@
+.landing-body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 5vh 0;
+}
+.landing-body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: 
+        url("/landing-image.png");
+    background-position: center center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+/* TODO: Fix background moving when scrolled  */
+
+@media only screen and (max-width: 992px) {
+    .landing-body::before {
+        background-size: 1000px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .landing-body::before {
+        background-size: 100%;
+    }
+}
+
+/* TODO: fix pop off going off screen when screen vertically shrinks */
+.popup {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+    position: relative; 
+
+    width: 50%;
+    min-width: 400px;
+    max-width: 630px;
+    height: auto;
+
+    background: rgba(77, 77, 77, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    border: 3px solid #3F5CAE;
+    border-radius: 10px;
+    
+    padding: 2.25em 3em 1.9em 3em;
+    /* TODO: figure out how to round the corners but still have a gradient on the border */
+    
+    /* border: 3px solid transparent;
+    border-image: linear-gradient(45deg, rgba(117, 175, 240, 0.5) 0%, rgba(60, 136, 221, 0.5) 100%) 1;
+    border-image-slice: 1; */
+    /* background-origin: border-box;
+    background-clip: content-box, border-box; */
+}

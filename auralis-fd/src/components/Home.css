@@ -1,0 +1,78 @@
+.welcome-section>h1, .welcome-section>h2, .last-info >p, .start-card>p{
+    text-align: left;
+
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+}
+.welcome-section>h1 {
+    margin-bottom: 0.5em;
+    color: #7E81E7;
+    font-size: clamp(1rem, 0.6795rem + 1.0256vw, 1.5rem);
+}
+.welcome-section>h2, .start-card>p {
+    font-size: clamp(0.75rem, 0.5897rem + 0.5128vw, 1rem);
+    color: var(--lightpink);
+}
+.welcome-section {
+    border-bottom: 2px solid #3F5CAE;
+    padding: 1.5em;
+}
+
+.highlight {
+    color: #E9A272;
+}
+
+.dash {
+    padding: 1.5em;
+}
+
+.last-info>p {
+    color: rgba(197, 153, 255, 0.7);
+    font-size: clamp(0.75rem, 0.5897rem + 0.5128vw, 1rem);
+}
+
+.start-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75em;
+    background-color: transparent;
+    border: 2px solid #3F5CAE;
+    border-radius: 10px;
+    padding: 1.875em 1em;
+}
+
+.start-card>button {
+    background-color: transparent;
+}
+
+.start-card>p {
+    text-align: left;
+    width: fit-content;
+}
+
+.start-task-bttn {
+    color: var(--white); /* TODO: Fix the background */
+    background: pink;
+    padding: 0.375em 1.375em;
+    width: fit-content;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    gap: 0.625em;
+}
+
+.start-task-bttn>img {
+    width: 2.5em;
+}
+
+.last-info {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.last-info>img {
+    width: 1em;
+}

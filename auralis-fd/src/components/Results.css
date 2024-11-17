@@ -1,0 +1,97 @@
+.results-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+}
+
+.info {
+    color: #CCCEFF;
+    font-size: var(--small);
+}
+
+.analytics-container {
+    margin: 4em 0 2.5em 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.risk-info {
+    color: var(--white);
+    font-size: clamp(1.5rem, 1.1795rem + 1.0256vw, 2rem);
+
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+}
+
+.disclaimer {
+    color: #CCCEFF;
+    margin-top: 0.25em;
+    font-size: var(--small);
+
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+}
+
+.cards-container {
+    margin: 4em 0;
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
+
+.wpm, .pauses, .clarity {
+   background-color: rgba(192, 168, 240, 0.2); 
+   border-radius: 20px;
+   padding: 1.5em;
+}
+.card-title {
+    color: var(--white);
+    text-align: center;
+
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+    font-size: clamp(1.5rem, 1.1795rem + 1.0256vw, 2rem)
+}
+.download-bttn { /* TODO: THIS STUPID BUTTON ISNT CENTERING */
+    display: flex;
+    align-items: center;
+    padding: 0.625em 2.25em;
+    gap: 0.15625em;
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+
+    font-size: clamp(0.75rem, 0.5897rem + 0.5128vw, 1rem);
+
+    border-radius: 5px;
+    color: #053061;
+    background-color: #75AFF0; 
+}
+
+.green {
+    color: #B3D27A;
+}
+
+.stats {
+    margin-top: 0.5em;
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+}
+
+.wpm-stats, .pauses-stats {
+    font-size: clamp(1.5rem, 1.1795rem + 1.0256vw, 2rem);
+}
+
+.clarity-stats {
+    font-size: var(--small);
+    text-align: left;
+    color: var(--white);
+}
+
+.download-bttn>img {
+    width: 0.875em;
+}
+
+

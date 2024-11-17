@@ -1,0 +1,73 @@
+.session-container {
+    padding: 1.5em;
+
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.prompt {
+    color: #CCCEFF;
+    font-size: clamp(0.75rem, 0.5897rem + 0.5128vw, 1rem);
+}
+
+.tip {
+    margin-top: 0.25em;
+
+    color: rgba(204, 205, 255, 0.8);
+    font-size: clamp(0.75rem, 0.5897rem + 0.5128vw, 1rem);
+}
+
+.studio {
+    margin: 8em 0; /* TODO: fix to make it so that buttons automatically go to the button */
+
+}
+
+.studio>p {
+    color: var(--white);
+    font-size: clamp(1.375rem, 1.1346rem + 0.7692vw, 1.75rem);
+    text-align: center;
+    padding: 1em 0;
+}
+.controls {
+    justify-content: center;
+    /* align-items: center; */
+    display: flex;
+    gap: 1.5em;
+}
+.restart-icon-container {
+    background-image: url("/restart.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-color: pink; */
+    width: 2em;
+    cursor: pointer;
+}
+.controls>button {
+    display: flex;
+    align-items: center;
+    padding: 0.625em 2.25em;
+    gap: 0.15625em;
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+
+    font-size: clamp(0.75rem, 0.5897rem + 0.5128vw, 1rem);
+
+    border-radius: 5px;
+}
+
+.start-bttn {
+    color: #053061;
+    background-color: #75AFF0;
+}
+.submit-audio-bttn {
+    color: #582C0E;
+    background-color: #E9A272;
+}
+
+.start-bttn>img, .submit-audio-bttn>img {
+    width: 0.875em;
+}
+

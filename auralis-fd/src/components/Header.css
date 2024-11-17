@@ -1,0 +1,46 @@
+.header {
+    grid-area: 1 / 2 / 2 / 6;
+    width: 100%;
+    height: fit-content;
+}
+
+.header-container {
+    display: flex;
+    width: 100%;
+    padding: 0.5em 1.125em;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 2px solid #3F5CAE;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+
+    margin: 0;
+}
+
+.header-container>h1 {
+    color: var(--lightpink);
+    font-family: "Roboto Flex", serif;
+    font-weight: var(--bodyweight);
+    font-size: clamp(0.875rem, 0.6346rem + 0.7692vw, 1.25rem);
+}
+
+.icons {
+    display: flex;
+    gap: 0.75em;
+    width: fit-content;
+    margin: 0;
+}
+
+img {
+    width: 1.5em;
+}
+@media only screen and (min-width: 600px) {
+    .icons {
+        gap: 1em;
+    }
+    img {
+        width: 2em;
+    }
+}
