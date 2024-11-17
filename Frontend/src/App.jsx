@@ -10,7 +10,7 @@ import PageNotFound from './components/PageNotFound'
 
 function App() {
 
-  const serverUrl = "http://localhost:5000";
+  const serverUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5000";
 
   return (
     <>

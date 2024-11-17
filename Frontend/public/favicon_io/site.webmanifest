@@ -1,18 +1,19 @@
 {
-    "name":"Auralis",
-    "short_name":"Auralis",
-    "icons":[
-        {
-            "src":"/favicon_io/android-chrome-192x192.png",
-            "sizes":"192x192",
-            "type":"image/png"
-        },
-        {
-            "src":"/favicon_io/android-chrome-512x512.png",
-            "sizes":"512x512","type":"image/png"
-        }
+    "name": "Auralis",
+    "short_name": "Auralis",
+    "icons": [
+      {
+        "src": "/favicon_io/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon_io/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
     ],
-    "theme_color":"#1D0C73",
-    "background_color":"#1D0C73",
-    "display":"standalone"
-}
+    "theme_color": "#1D0C73",
+    "background_color": "#1D0C73",
+    "display": "standalone"
+  }  

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+""" from flask import Flask, request, jsonify
 # from transformers import AutoProcessor, Wav2Vec2FeatureExtractor # Replace with that and see if it works because different process maybe
 from transformers import AutoProcessor, Wav2Vec2ForSpeechClassification
 import torch
@@ -35,6 +35,29 @@ def analyze_audio():
     confidence = probabilities[0, predicted_label].item()
 
     return jsonify({"result": result, "confidence": confidence})
+
+if __name__ == "__main__":
+    app.run(debug=True)
+ """
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
+
+@app.route("/analyze", methods=["POST"])
+def analyze():
+    if "audio" not in request.files:
+        return jsonify({"error": "No audio file uploaded"}), 400
+
+    # Assuming you process the audio here...
+
+    return jsonify({
+        "risk": "high",
+        "wpm": 80,
+        "pauses": 6,
+        "clarity": "unsteady"
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)
