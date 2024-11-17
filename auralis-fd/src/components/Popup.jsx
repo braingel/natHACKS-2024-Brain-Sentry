@@ -7,7 +7,7 @@ import Content from "./Content"
 
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "/Users/ebubechukunjoku/CS Projects/natHACKS 2024/natHACKS-2024-Brain-Sentry/auralis-fd/firebase.jsx";
+import { auth } from "../../firebase.jsx";
 
 import './Popup.css'
 
