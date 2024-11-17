@@ -9,6 +9,7 @@ export default function Session({serverUrl}) {
     const audioChunksRef = useRef([]);
     const recordingTimeoutRef = useRef(null); // To store the timeout reference
     const navigate = useNavigate();
+    const [stoppedRecording, setStoppedRecording] = useState(false);
 
 
     // Start recording
@@ -33,6 +34,7 @@ export default function Session({serverUrl}) {
         // Automatically stop recording after 2 minutes
         recordingTimeoutRef.current = setTimeout(() => {
             stopRecording();
+            setStoppedRecording(true)
         }, 120000); // 120,000ms = 2 minutes
     };
 
@@ -80,7 +82,7 @@ export default function Session({serverUrl}) {
             <p className="prompt">"Describe a recent memorable experience you've had. It could be something fun, meaningful, or even a small moment that stood out to you."</p>
             <p className="tip">(You have 2 minutes to talk—start whenever you're ready, and we'll let you know when to stop.)</p>
             <div className="studio">
-                <p> {isRecording ? "Keep talking!" : "Click start speaking to begin your task."}</p> 
+                <p> {isRecording ? "Keep talking!" : stoppedRecording ? "Recording complete! Press submit to send your audio." : "Click start speaking to begin your task."}</p> 
             </div>
             <div className="controls">
                 <div className="restart-icon-container">
