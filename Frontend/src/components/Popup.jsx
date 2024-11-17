@@ -1,9 +1,9 @@
 // import React from "react";
 // import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import Nav from "./Nav"
-import Header from "./Header"
-import Content from "./Content"
+import Nav from "./Nav.jsx"
+import Header from "./Header.jsx"
+import Content from "./Content.jsx"
 
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -40,7 +40,7 @@ export default function Popup() {
     const handleSignOut = async () => {
         try {
         await signOut(auth);
-        alert("Signed out successfully");
+        // alert("Signed out successfully");
         setUserEmailPrefix(null); 
         navigate("/")
         } catch (error) {

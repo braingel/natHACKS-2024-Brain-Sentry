@@ -2,7 +2,9 @@
     display: block;
     margin: 0 auto;
 }
-
+.logo-img {
+    width: 4em;
+}
 .login-container :is(h2, h3, p), .field, .submit-bttn {
     font-family: "Roboto Flex", serif;
     font-weight: var(--bodyweight);
