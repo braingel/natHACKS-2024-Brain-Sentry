@@ -5,12 +5,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "vite preview --port 4173"
-  },
+  "render-postbuild": "npm install --prefix Frontend && cd Frontend && npm run build",
+  "install": "npm install --prefix Backend && npm install --prefix Frontend",
+  "dev:Backend": "npm start --prefix Backend",
+  "dev:Frontend": "npm start --prefix Frontend",
+  "start": "npm start --prefix Backend",
+  "build": "npm run build --prefix Backend"
+},
   "dependencies": {
     "@huggingface/hub": "^0.20.0",
     "dotenv": "^16.4.5",
