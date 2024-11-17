@@ -10,6 +10,9 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [clarity, setClarity] = useState("");
+  const [result, setResult] = useState("");
+  const [wordsPerMinute, setWordsPerMinute] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -26,27 +29,20 @@ const Signup = () => {
       // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-      // Save the user's name in Firestore under the user's UID
+      // Save the user's name, email, and extra data in Firestore under the user's UID
       const user = userCredential.user;
       await setDoc(doc(db, "users", user.uid), {
         name: name,
         email: email,
+        clarity: clarity,
+        result: result,
+        wordsPerMinute: wordsPerMinute,
       });
 
       alert("Account created successfully");
       navigate("/login"); // Redirect to login page after successful signup
     } catch (err) {
-      // Handle specific Firebase errors
-      switch (err.code) {
-        case "auth/email-already-in-use":
-          setError("The email address is already in use. Please use a different email.");
-          break;
-        case "auth/invalid-email":
-          setError("The email address is invalid. Please enter a valid email.");
-          break;
-        default:
-          setError("An unexpected error occurred: " + err.message);
-      }
+      setError(err.message);
     }
   };
 
@@ -81,6 +77,24 @@ const Signup = () => {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
+        />
+        <input
+          type="text"
+          placeholder="Clarity"
+          value={clarity}
+          onChange={(e) => setClarity(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Result"
+          value={result}
+          onChange={(e) => setResult(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Words Per Minute"
+          value={wordsPerMinute}
+          onChange={(e) => setWordsPerMinute(e.target.value)}
         />
         <button type="submit">Signup</button>
       </form>
