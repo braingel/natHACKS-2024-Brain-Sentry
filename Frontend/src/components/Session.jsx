@@ -2,14 +2,14 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Session.css"
 
-export default function Session( {serverUrl} ) {
+export default function Session() {
     const [isRecording, setIsRecording] = useState(false);
-    const [audioUrl, setAudioUrl] = useState("");
+    const [stoppedRecording, setStoppedRecording] = useState(false);
+    // const [audioUrl, setAudioUrl] = useState("");
     const mediaRecorderRef = useRef(null);
     const audioChunksRef = useRef([]);
     const recordingTimeoutRef = useRef(null); // To store the timeout reference
     const navigate = useNavigate();
-    const [stoppedRecording, setStoppedRecording] = useState(false);
 
 
     // Start recording
@@ -23,9 +23,10 @@ export default function Session( {serverUrl} ) {
 
         mediaRecorderRef.current.onstop = () => {
             const blob = new Blob(audioChunksRef.current, { type: 'audio/wav' });
-            const url = URL.createObjectURL(blob);
-            setAudioUrl(url);  // Set the URL for playback
-            sendAudioToServer(blob);  // Send audio to server after recording
+            console.log("Audio Blob URL:", URL.createObjectURL(blob)); // Added to make it static
+            // const url = URL.createObjectURL(blob);
+            // setAudioUrl(url);  // Set the URL for playback
+            // sendAudioToServer(blob);  // TODO: implement when server works. Send audio to server after recording
         };
 
         mediaRecorderRef.current.start();
@@ -49,11 +50,21 @@ export default function Session( {serverUrl} ) {
             clearTimeout(recordingTimeoutRef.current);
             recordingTimeoutRef.current = null;
         }
+            navigate("/dashboard/results", { // TODO: Added to make it static
+                state: {
+                    analysisResult: {
+                        risk: "moderate",
+                        wpm: 100,
+                        pauses: 5,
+                        clarity: "clear",
+                    },
+                },
+            });
         }
     };
 
-    // Send audio to server
-    const sendAudioToServer = async (audioBlob) => {
+    // TODO: Send audio to server
+    /* const sendAudioToServer = async (audioBlob) => {
         const formData = new FormData();
         formData.append("audio", audioBlob, "audio.wav");
 
@@ -75,7 +86,7 @@ export default function Session( {serverUrl} ) {
         } catch (error) {
             console.error("Failed to send audio:", error);
         }
-    };
+    }; */
 
     return (
         <div className="session-container">
@@ -103,6 +114,7 @@ export default function Session( {serverUrl} ) {
                 </button>
                 <button 
                     className="submit-audio-bttn"
+                    // style={!isRecording ? backgroundColor=}
                     onClick={stopRecording}
                     disabled={!isRecording} // Enable only if recording is active
                     >
