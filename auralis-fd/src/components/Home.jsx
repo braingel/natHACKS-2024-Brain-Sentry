@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <div className="content-contanier">
             <div className="welcome-section">
-                <h1>Welcome John Doe,</h1> {/* TODO: Add prop to replace John Doe*/}
+                <h1>Welcome,</h1> {/* TODO: Add prop to replace John Doe*/}
                 <h2>Your risk for neurodegeneration is <span className="highlight">low</span> based on the results of your latest speech analysis.</h2> {/* TODO: Add prop to replace low */}
             </div>
             <div className="dash">
