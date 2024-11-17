@@ -26,7 +26,7 @@ export default function Login() {
         }
         try {
           await createUserWithEmailAndPassword(auth, email, password);
-          alert("Account created successfully"); // TODO: delete
+        //   alert("Account created successfully");
           switchPage()
         } catch (err) {
           setError(err.message);
@@ -43,7 +43,7 @@ export default function Login() {
         e.preventDefault();
         try {
         await signInWithEmailAndPassword(auth, email, password);
-        alert("Logged in successfully"); // TODO: Delete
+        // alert("Logged in successfully");
         navigate("/dashboard/home");
         } catch (err) {
         setError(err.message);

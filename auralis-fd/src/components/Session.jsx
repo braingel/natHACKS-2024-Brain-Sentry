@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Session.css"
 
-export default function Session({serverUrl}) {
+export default function Session( {serverUrl} ) {
     const [isRecording, setIsRecording] = useState(false);
     const [audioUrl, setAudioUrl] = useState("");
     const mediaRecorderRef = useRef(null);
@@ -35,7 +35,7 @@ export default function Session({serverUrl}) {
         recordingTimeoutRef.current = setTimeout(() => {
             stopRecording();
             setStoppedRecording(true)
-        }, 120000); // 120,000ms = 2 minutes
+        }, 10000); // 120,000ms = 2 minutes TODO: change back to 120000
     };
 
     // Stop recording
@@ -58,7 +58,7 @@ export default function Session({serverUrl}) {
         formData.append("audio", audioBlob, "audio.wav");
 
         try {
-            const response = await fetch(serverUrl, {
+            const response = await fetch(`${serverUrl}/analyze`, {
             method: "POST",
             body: formData,
             });
@@ -85,6 +85,13 @@ export default function Session({serverUrl}) {
                 <p> {isRecording ? "Keep talking!" : stoppedRecording ? "Recording complete! Press submit to send your audio." : "Click start speaking to begin your task."}</p> 
             </div>
             <div className="controls">
+                {/* {audioUrl && (
+                    <div>
+                        <p>Your recording:</p>
+                        <audio controls src={audioUrl}></audio>
+                    </div>
+                    )}
+                */}
                 <div className="restart-icon-container">
                 </div>
                 <button 

@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+# from transformers import AutoProcessor, Wav2Vec2FeatureExtractor # Replace with that and see if it works because different process maybe
 from transformers import AutoProcessor, Wav2Vec2ForSpeechClassification
 import torch
 import soundfile as sf
@@ -12,7 +13,7 @@ model_name = "nada15/wav2vec2-large-xls-r-300m-dm32"
 processor = AutoProcessor.from_pretrained(model_name)
 model = Wav2Vec2ForSpeechClassification.from_pretrained(model_name)
 
-@app.route("/analyze-audio", methods=["POST"])
+@app.route("/analyze", methods=["POST"])
 def analyze_audio():
     if "audio" not in request.files:
         return jsonify({"error": "No audio file uploaded"}), 400
