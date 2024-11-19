@@ -7,4 +7,4 @@ Auralis—Detect the decline, while there’s still time. This project was devel
 
 - Our  web application enables users to record 30-second to 1-minute audio clips for analysis, integrating into regular health routines. The model processes these recordings to identify dementia-related speech patterns for early detection.
 
-- Check out the MVP here [ Auralis ](https://auralis-static.onrender.com/)
+- Check out the MVP here [ Auralis ](https://auralis-static.onrender.com/) and devpost here: [ Devpost ](https://devpost.com/software/brain-sentry)
