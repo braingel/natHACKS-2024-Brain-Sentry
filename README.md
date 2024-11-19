@@ -5,4 +5,6 @@ Auralis—Detect the decline, while there’s still time. This project was devel
 
 - We used [_DementiaNet_](https://github.com/shreyasgite/dementianet), an open-source longitudinal dataset of audio recordings from famous actors with and without dementia. These recordings include speech patterns captured over time, allowing our machine-learning model to differentiate between healthy ageing and early cognitive decline.
 
-- Our  web application enables users to record 30-second to 1-minute audio clips for analysis, integrating into regular health routines. The model processes these recordings to identify dementia-related speech patterns for early detection. 
+- Our  web application enables users to record 30-second to 1-minute audio clips for analysis, integrating into regular health routines. The model processes these recordings to identify dementia-related speech patterns for early detection.
+
+- Check out the MVP here [ Auralis ](https://auralis-static.onrender.com/)
